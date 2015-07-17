@@ -1,8 +1,5 @@
-iOS-Slide-Menu [![Version](http://cocoapod-badges.herokuapp.com/v/iOS-Slide-Menu/badge.png)](http://cocoadocs.org/docsets/iOS-Slide-Menu)
+iOS-Slide-Menu
 ---------
-
-**NOTE: If your application supports both landscape and portrait and supports iOS versions below 8, use version 1.4.5**
-
 iOS Slide Menu built on top of UINavigationController, with configurable buttons, reveal animations, and tap/swiper gesture recognizers.
 
 - [Setup](https://github.com/aryaxt/iOS-Slide-Menu#setup)
@@ -13,10 +10,6 @@ iOS Slide Menu built on top of UINavigationController, with configurable buttons
 - [Notifications](https://github.com/aryaxt/iOS-Slide-Menu#notifications)
 
 ![alt tag](https://raw.github.com/aryaxt/iOS-Slide-Menu/master/slideMenuAnimation.gif)
-
-Version 1.4.5 Notes
----------
-Enabling shouldRecognizeSimultaneouslyWithGestureRecognizer was causing issues, if you are seeing unexpected gesture behavior delete the pod and reinstall as that method has been removed
 
 Version 1.4.0 Notes
 ---------
@@ -40,9 +33,9 @@ Setup
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	LeftMenuViewController *leftMenu = [[LeftMenuViewController alloc] init];
-        RightMenuViewController *rightMenu = [[RightMenuViewController alloc] init];
+        RightMenuViewController *righMenu = [[RightMenuViewController alloc] init];
 	
-	[SlideNavigationController sharedInstance].rightMenu = rightMenu;
+	[SlideNavigationController sharedInstance].righMenu = rightMenu;
 	[SlideNavigationController sharedInstance].leftMenu = leftMenu;
 	
     // Override point for customization after application launch.
@@ -103,10 +96,6 @@ Behaves exactly the same as leftbarButtonItem, but it's used as the right button
 Default value of portraitSlideOffset is 60. This means when the menu is open, the width of the visible portion of the navigation controller is 60 pixels in portrait mode
 ###### landscapeSlideOffset
 Default value of portraitSlideOffset is 60. This means when the menu is open, the width of the visible portion of the navigation controller is 60 pixels in landscape mode
-###### menuRevealAnimationDuration
-Default value of animation duration is .3, this property allows configuring animation duration
-###### menuRevealAnimationOption
-Defaults to UIViewAnimationOptionCurveEaseOut, you can change this property to configure animation options
 ###### menuRevealAnimator
 menuRevealAnimator is used to animate the left/right menu during reveal. The default value is nil, that means no animations occure when opening/closing the menu. 
 
